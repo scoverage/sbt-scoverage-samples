@@ -10,7 +10,7 @@ object InstrumentLoader {
   def randomInstrument: Instrument = Random.shuffle(InstrumentLoader.instruments).head
 
   lazy val instruments =
-    IOUtils.readLines(getClass.getResourceAsStream("dow.csv"), "UTF-8").asScala
+    IOUtils.readLines(getClass.getResourceAsStream("/dow.csv"), "UTF-8").asScala
       .map(line => {
       val tokens = line.split(',')
       Instrument(tokens(0).trim, tokens(1).trim)

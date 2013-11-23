@@ -1,16 +1,35 @@
 package org.scalescc.test
 
-import akka.actor.Actor
+import akka.actor.{Cancellable, Actor}
+import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
- * Receives quotes and caches the latest quote for each instrument.
- * Can be queried for latest quote
+ * Produces quotes on a regular basis for all instruments and
+ * broadcasts to the event stream.
  *
  * @author Stephen Samuel */
-class PriceEngine extends Actor {
-  val map = scala.collection.mutable.Map.empty[Instrument, SpotQuote]
+class PriceEngine(generator: QuoteGenerator) extends Actor {
+
+  var cancellable: Cancellable = _
+
   def receive = {
-    case quote: SpotQuote => map.put(quote.instrument, quote)
-    case rfq: RequestForQuote => map.get(rfq.instrument) foreach (sender ! QuoteResponse(_, rfq.id))
+    case StartService =>
+      println("Starting price engine")
+      stop()
+      cancellable = context.system.scheduler.schedule(100 milliseconds, 100 milliseconds) {
+        val quote = generator.generate
+        context.system.eventStream.publish(quote)
+      }
+    case StopService =>
+      println("Stopping price engine")
+      stop()
+  }
+  def stop() {
+    if (cancellable != null)
+      cancellable.cancel()
+  }
+  override def preStart(): Unit = {
+    self ! StartService
   }
 }

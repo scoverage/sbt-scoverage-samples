@@ -8,16 +8,23 @@ import scala.concurrent.ExecutionContext.Implicits.global
 /** @author Stephen Samuel */
 class ClientActor(priceEngine: ActorRef, orderEngine: ActorRef) extends Actor {
 
+  val MinPrice = BigDecimal.valueOf(50)
+
   def receive = {
     case quote: SpotQuote =>
-      println("Quote received: " + quote)
-      if (Random.nextBoolean()) {
-        orderEngine ! MarketOrderRequest(quote.instrument, BigDecimal.valueOf(Random.nextInt()))
+      if (quote.ask < MinPrice) {
+        println("Sending market order request")
+        orderEngine ! MarketOrderRequest(quote.instrument, BigDecimal.valueOf(Random.nextInt(100)))
       }
+    case r: MarketOrderReject =>
+      println("Order was rejected :(" + r)
+    case a: MarketOrderAccept =>
+      println("Order was accepted :)" + a)
   }
+
   override def preStart(): Unit = {
-    // ask for a quote every 500 millis
-    context.system.scheduler.schedule(500 milliseconds, 500 milliseconds) {
+    // ask for a quote every second for a random equity
+    context.system.scheduler.schedule(100 milliseconds, 1000 milliseconds) {
       priceEngine ! RequestForQuote(InstrumentLoader.randomInstrument)
     }
   }

@@ -14,9 +14,5 @@ object Platform extends App {
 
   val clients = for ( k <- 0 until 10 ) yield system.actorOf(Props(classOf[ClientActor], priceEngine))
 
-  // schedule a random quote every 100ms
-  system.scheduler.schedule(100 milliseconds, 100 milliseconds) {
-    val quote = generator.generate
-    clients.foreach(_ ! quote)
-  }
+
 }

@@ -8,6 +8,8 @@ scalaVersion := "2.10.3"
 
 parallelExecution in Test := false
 
+seq(ScctPlugin.instrumentSettings: _*)
+
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"

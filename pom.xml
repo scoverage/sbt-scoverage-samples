@@ -48,6 +48,7 @@
                     <configuration>
                         <args>
                             <arg>-g:vars</arg>
+                            <arg>-Yrangepos</arg>
                         </args>
                         <jvmArgs>
                             <jvmArg>-Xms64m</jvmArg>

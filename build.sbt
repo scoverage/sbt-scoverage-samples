@@ -1,21 +1,24 @@
+import org.scalescc.sbt.ScalesSbtPlugin
+
 name := "scales-test"
 
 organization := "org.scalescc"
 
-version := "0.1.0-SNAPSHOT"
+version := "0.11.0-SNAPSHOT"
 
 scalaVersion := "2.10.3"
 
 parallelExecution in Test := false
 
-seq(ScctPlugin.instrumentSettings: _*)
-
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"
+libraryDependencies ++= Seq(
+  "commons-io" % "commons-io" % "2.4",
+  "com.typesafe.akka" %% "akka-actor" % "2.2.3",
+  "com.typesafe.akka" %% "akka-actor-tests" % "2.2.3",
+  "org.scalatest" %% "scalatest" % "2.0" % "test"
+)
 
-libraryDependencies += "commons-io" % "commons-io" % "2.4"
+addSbtPlugin("org.scalescc" %% "sbt-scales" % "0.11.0-SNAPSHOT" % "provided")
 
-libraryDependencies += "com.typesafe.akka" % "akka-actor_2.10" % "2.2.3"
-
-libraryDependencies += "com.typesafe.akka" % "akka-actor-tests_2.10" % "2.2.3"
+seq(ScalesSbtPlugin.instrumentSettings: _*)

@@ -1,8 +1,8 @@
-resolvers += Classpaths.typesafeReleases
-
 resolvers ++= Seq(
-  "scct-github-repository" at "http://mtkopone.github.com/scct/maven-repo",
-  "oss sonatype" at "https://oss.sonatype.org/content/groups/public/"
+  Classpaths.sbtPluginReleases,
+  Classpaths.sbtPluginSnapshots,
+  Resolver.url("local-ivy",
+    new URL("file://" + Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)
 )
 
-addSbtPlugin("com.github.scct" % "sbt-scct" % "0.2.1")
+addSbtPlugin("org.scalescc" %% "sbt-scales" % "0.11.0-SNAPSHOT")

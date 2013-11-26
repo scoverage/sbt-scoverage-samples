@@ -9,7 +9,6 @@ class CreditEngine extends Actor {
 
   def receive = {
     case req: CreditRequest =>
-      println("Received credit request: " + req)
       if (req.amount < MaxCredit) sender ! CreditApprove(req.req, req.amount, req.client)
       else sender ! CreditReject(req.req, req.client)
   }

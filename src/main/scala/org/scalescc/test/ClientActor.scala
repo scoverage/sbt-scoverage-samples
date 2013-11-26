@@ -13,7 +13,7 @@ class ClientActor(priceEngine: ActorRef, orderEngine: ActorRef) extends Actor {
   def receive = {
     case quote: SpotQuote =>
       if (quote.ask < MinPrice) {
-        println("Sending market order request")
+        println("Sending order request")
         orderEngine ! MarketOrderRequest(quote.instrument, BigDecimal.valueOf(Random.nextInt(100)))
       }
     case r: MarketOrderReject =>

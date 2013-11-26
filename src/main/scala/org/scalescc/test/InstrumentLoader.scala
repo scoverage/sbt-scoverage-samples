@@ -7,6 +7,9 @@ import scala.util.Random
 /** @author Stephen Samuel */
 object InstrumentLoader {
 
+  // this is here just to show the single line per statement colouring
+  val alwaysTrue = if (System.currentTimeMillis() > 0) "hello" else "goodbye"
+
   def randomInstrument: Instrument = Random.shuffle(InstrumentLoader.instruments).head
 
   lazy val instruments =

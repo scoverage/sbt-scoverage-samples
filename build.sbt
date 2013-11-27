@@ -1,8 +1,8 @@
 import org.scalescc.sbt.ScalesSbtPlugin
 
-name := "scales-test"
+name := "scoot-test"
 
-organization := "org.scalescc"
+organization := "com.sksamuel.scoot"
 
 version := "0.11.0-SNAPSHOT"
 
@@ -19,6 +19,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.0" % "test"
 )
 
-addSbtPlugin("org.scalescc" %% "sbt-scales" % "0.11.0-SNAPSHOT" % "provided")
+addSbtPlugin("com.sksamuel.scoot" %% "sbt-scoot" % "0.11.0-SNAPSHOT" % "provided")
 
 seq(ScalesSbtPlugin.instrumentSettings: _*)

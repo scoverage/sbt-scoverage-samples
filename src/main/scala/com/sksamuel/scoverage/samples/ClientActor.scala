@@ -10,6 +10,10 @@ class ClientActor(priceEngine: ActorRef, orderEngine: ActorRef) extends Actor {
 
   val MinPrice = BigDecimal.valueOf(50)
 
+  // pointless override to test coverage
+  var clientName: String = "DoIHaveAName?"
+  def clientName_=(n: String): Unit = clientName = n
+
   def receive = {
     case quote: SpotQuote =>
       if (quote.ask < MinPrice) {

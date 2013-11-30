@@ -1,9 +1,9 @@
 cd ../scalac-scoverage-plugin
-sbt publishLocal
+sbt clean publishLocal
 
 
 cd ../sbt-scoverage
-sbt publishLocal
+sbt clean publishLocal
 
 cd ../scoverage-samples
-sbt scoverage:test
+sbt clean scoverage:test

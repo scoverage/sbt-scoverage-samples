@@ -1,4 +1,4 @@
-package org.scalescc.test
+package com.sksamuel.scoverage.samples
 
 import org.apache.commons.io.IOUtils
 import scala.collection.JavaConverters._

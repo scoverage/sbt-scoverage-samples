@@ -1,10 +1,8 @@
-import org.scalescc.sbt.ScalesSbtPlugin
+name := "scoverage-samples"
 
-name := "scoot-test"
+organization := "com.sksamuel.scoverage"
 
-organization := "com.sksamuel.scoot"
-
-version := "0.11.0-SNAPSHOT"
+version := "0.92.0-SNAPSHOT"
 
 scalaVersion := "2.10.3"
 
@@ -19,6 +17,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.0" % "test"
 )
 
-addSbtPlugin("com.sksamuel.scoot" %% "sbt-scoot" % "0.11.0-SNAPSHOT" % "provided")
+addSbtPlugin("com.sksamuel.scoverage" %% "sbt-scoverage" % "0.92.0-SNAPSHOT" % "provided")
 
-seq(ScalesSbtPlugin.instrumentSettings: _*)
+seq(ScoverageSbtPlugin.instrumentSettings: _*)

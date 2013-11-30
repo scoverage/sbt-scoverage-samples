@@ -1,4 +1,4 @@
-package org.scalescc.test
+package com.sksamuel.scoverage.samples
 
 import java.util.UUID
 

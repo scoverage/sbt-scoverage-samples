@@ -1,4 +1,4 @@
-package org.scalescc.test
+package com.sksamuel.scoverage.samples
 
 import akka.actor.{Cancellable, Actor}
 import scala.concurrent.duration._

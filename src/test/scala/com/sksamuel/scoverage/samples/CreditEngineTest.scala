@@ -1,4 +1,4 @@
-package org.scalescc.test
+package com.sksamuel.scoverage.samples
 
 import org.scalatest.{OneInstancePerTest, FlatSpec}
 import akka.actor.{ActorSystem, Props}

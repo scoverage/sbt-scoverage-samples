@@ -1,4 +1,4 @@
-package org.scalescc.test
+package com.sksamuel.scoverage.samples
 
 import akka.actor.{ActorRef, Actor}
 import scala.util.Random

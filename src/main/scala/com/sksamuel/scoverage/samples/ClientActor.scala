@@ -14,6 +14,8 @@ class ClientActor(priceEngine: ActorRef, orderEngine: ActorRef) extends Actor {
   private var _clientName: String = "DoIHaveAName?"
   def clientName = _clientName
   def clientName_=(n: String): Unit = _clientName = n
+  clientName = "sammy"
+  println(clientName)
 
   def receive = {
     case quote: SpotQuote =>

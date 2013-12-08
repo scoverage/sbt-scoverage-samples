@@ -8,4 +8,4 @@ cd ../xsbt-coveralls-plugin
 sbt clean publishLocal
 
 cd ../scoverage-samples
-sbt clean scoverage:test
+sbt clean coveralls

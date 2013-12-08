@@ -1,3 +1,5 @@
+import com.sksamuel.scoverage.ScoverageSbtPlugin
+
 name := "scoverage-samples"
 
 organization := "com.sksamuel.scoverage"

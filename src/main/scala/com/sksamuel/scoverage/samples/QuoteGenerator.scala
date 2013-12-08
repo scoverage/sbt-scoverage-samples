@@ -8,6 +8,12 @@ trait QuoteGenerator {
 }
 
 class RandomQuoteGenerator extends QuoteGenerator {
+
+  def this(flibble: String) = {
+    this()
+    println("A fantastic constructor")
+  }
+
   def generate: SpotQuote = SpotQuote(
     InstrumentLoader.randomInstrument,
     if (System.currentTimeMillis() == 0) new Currency("Flibble") else new Currency("USD"),

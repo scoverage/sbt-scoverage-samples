@@ -1,7 +1,11 @@
 scoverage-samples
 ==================
 
-A sample program for demonstrating scales code coverage. This sample is an akka based mock equity quote engine.
+[![Build Status](https://travis-ci.org/scoverage/scoverage-samples.png?branch=master)](https://travis-ci.org/scoverage/scoverage-samples)
+[![Coverage Status](https://coveralls.io/repos/scoverage/scoverage-samples/badge.png)](https://coveralls.io/r/scoverage/scoverage-samples)
+
+
+A sample program for demonstrating scales code coverage. This sample is an akka based mock quote engine.
 
 It uses:
 

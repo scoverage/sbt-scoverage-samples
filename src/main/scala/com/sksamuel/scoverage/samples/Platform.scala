@@ -5,7 +5,7 @@ import akka.actor.{Props, ActorSystem}
 /** @author Stephen Samuel */
 object Platform extends App {
 
-  val system = ActorSystem("scales-test")
+  val system = ActorSystem("scoverage-test")
 
   val priceEngine = system.actorOf(Props(classOf[PriceEngine], new RandomQuoteGenerator))
   val creditEngine = system.actorOf(Props[CreditEngine])

@@ -15,7 +15,6 @@ class ClientActor(priceEngine: ActorRef, orderEngine: ActorRef) extends Actor {
   def clientName = _clientName
   def clientName_=(n: String): Unit = _clientName = n
   clientName = "sammy"
-  println(clientName)
   clientName = if (System.currentTimeMillis() < 0) "charlie" else "bobby"
 
   def receive = {

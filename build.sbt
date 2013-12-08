@@ -1,10 +1,8 @@
-import com.sksamuel.scoverage.ScoverageSbtPlugin
-
 name := "scoverage-samples"
 
 organization := "com.sksamuel.scoverage"
 
-version := "0.92.0-SNAPSHOT"
+version := "0.93.0"
 
 scalaVersion := "2.10.3"
 
@@ -19,6 +17,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.0" % "test"
 )
 
-addSbtPlugin("com.sksamuel.scoverage" %% "sbt-scoverage" % "0.92.0-SNAPSHOT")
+ScoverageSbtPlugin.instrumentSettings
 
-seq(ScoverageSbtPlugin.instrumentSettings: _*)
+CoverallsPlugin.singleProject

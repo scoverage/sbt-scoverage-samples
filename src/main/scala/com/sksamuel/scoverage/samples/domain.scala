@@ -13,10 +13,6 @@ case class Instrument(symbol: String,
 
 case class Currency(symbol: String)
 
-object Currency {
-  val USD = Currency("USD")
-}
-
 case class Order(req: MarketOrderRequest,
                  amount: BigDecimal,
                  id: String = UUID.randomUUID.toString)

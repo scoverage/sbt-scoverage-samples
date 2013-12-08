@@ -9,7 +9,7 @@ class OrderEngineTest extends FlatSpec with OneInstancePerTest {
 
   val quote = SpotQuote(
     Instrument("CVX", "Chevron"),
-    Currency.USD,
+    Currency("USD"),
     BigDecimal.valueOf(14.56),
     BigDecimal.valueOf(14.89)
   )

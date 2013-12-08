@@ -22,7 +22,7 @@ class ClientActorTest extends FlatSpec with OneInstancePerTest {
   it should "send a market order request if ask under minimum" in {
     val quote = SpotQuote(
       Instrument("CVX", "Chevron"),
-      Currency.USD,
+      Currency("USD"),
       BigDecimal.valueOf(49.99),
       BigDecimal.valueOf(49.99)
     )
@@ -33,7 +33,7 @@ class ClientActorTest extends FlatSpec with OneInstancePerTest {
   it should "not send an order request if ask is over minimum" in {
     val quote = SpotQuote(
       Instrument("CVX", "Chevron"),
-      Currency.USD,
+      Currency("USD"),
       BigDecimal.valueOf(50.01),
       BigDecimal.valueOf(50.01)
     )

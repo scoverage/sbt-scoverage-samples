@@ -5,7 +5,6 @@ import akka.actor.Actor
 /** @author Stephen Samuel */
 class CreditEngine extends Actor {
 
-
   val MaxCredit = BigDecimal.valueOf(2000)
 
   def receive = {

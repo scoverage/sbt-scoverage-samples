@@ -12,7 +12,7 @@ class CreditEngineTest extends FlatSpec with OneInstancePerTest {
 
   val quote = SpotQuote(
     Instrument("CVX", "Chevron"),
-    Currency.USD,
+    Currency("USD"),
     BigDecimal.valueOf(49.99),
     BigDecimal.valueOf(49.99)
   )

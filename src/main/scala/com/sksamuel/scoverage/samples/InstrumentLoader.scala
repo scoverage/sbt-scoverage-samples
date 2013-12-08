@@ -1,25 +1,20 @@
 package com.sksamuel.scoverage.samples
 
-import org.apache.commons.io.IOUtils
-import scala.collection.JavaConverters._
 import scala.util.Random
 import java.util.Date
+import org.apache.commons.io.IOUtils
+import scala.collection.JavaConverters._
 
 /** @author Stephen Samuel */
 object InstrumentLoader {
-
-  val qqq = Instrument("sammy", "bobby")
 
   // this is here just to show the single line per statement colouring
   val beautifulTopLevelVal = if (System.currentTimeMillis() > 0) "hello" else "goodbye"
 
   // testing new statements
-  val birthdate = new Date()
+  val loadTime = new Date()
 
-  def randomInstrument: Instrument = {
-    Random.shuffle(InstrumentLoader.instruments).head
-    qqq
-  }
+  def randomInstrument: Instrument = Random.shuffle(instruments).head
 
   lazy val instruments = {
     IOUtils.readLines(getClass.getResourceAsStream("/dow.csv"), "UTF-8").asScala

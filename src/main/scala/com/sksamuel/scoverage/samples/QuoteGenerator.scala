@@ -10,8 +10,8 @@ trait QuoteGenerator {
 class RandomQuoteGenerator extends QuoteGenerator {
   def generate: SpotQuote = SpotQuote(
     InstrumentLoader.randomInstrument,
-    Currency.USD,
-    BigDecimal.valueOf(Random.nextDouble() * 100),
-    BigDecimal.valueOf(Random.nextDouble() * 100)
+    if (System.currentTimeMillis() == 0) new Currency("Flibble") else new Currency("USD"),
+    BigDecimal.valueOf(Random.nextDouble * 100),
+    BigDecimal.valueOf(Random.nextDouble * 100)
   )
 }

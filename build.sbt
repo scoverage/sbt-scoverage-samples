@@ -4,11 +4,9 @@ name := "scoverage-samples"
 
 organization := "com.sksamuel.scoverage"
 
-version := "0.94.0"
+version := "0.95.0"
 
 scalaVersion := "2.10.3"
-
-parallelExecution in Test := false
 
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
@@ -22,3 +20,7 @@ libraryDependencies ++= Seq(
 ScoverageSbtPlugin.instrumentSettings
 
 CoverallsPlugin.singleProject
+
+publishArtifact in Test := false
+
+parallelExecution in Test := false

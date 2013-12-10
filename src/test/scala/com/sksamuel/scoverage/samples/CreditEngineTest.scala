@@ -17,6 +17,9 @@ class CreditEngineTest extends FlatSpec with OneInstancePerTest {
     BigDecimal.valueOf(49.99)
   )
 
+  // test that test resources are copied in
+  assert(getClass.getResource("/com/bomb/scroobius.txt") != null)
+
   val req = MarketOrderRequest(Instrument("CVX", "Chevron"), BigDecimal.valueOf(400))
 
   val system = ActorSystem("scales-test")

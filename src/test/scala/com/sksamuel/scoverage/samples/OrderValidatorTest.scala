@@ -1,8 +1,8 @@
 package com.sksamuel.scoverage.samples
 
 import org.scalatest.{FlatSpec, OneInstancePerTest}
-import subpackage1.OrderException
-import subpackage2.OrderValidator
+import subpackage1.exceptions.OrderException
+import subpackage2.validators.OrderValidator
 
 /** @author Stephen Samuel */
 class OrderValidatorTest extends FlatSpec with OneInstancePerTest {

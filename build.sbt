@@ -2,7 +2,7 @@ name := "scoverage-samples"
 
 organization := "com.sksamuel.scoverage"
 
-version := "0.95.0"
+version := "0.95.2"
 
 scalaVersion := "2.10.3"
 

@@ -19,15 +19,15 @@ case class Order(req: MarketOrderRequest,
 }
 
 // testing that scoverage handles multiple packages in the same file
-package subpackage1 {
+package subpackage1.exceptions {
 
 case class OrderException(msg: String) extends RuntimeException
 
 }
 
-package subpackage2 {
+package subpackage2.validators {
 
-import subpackage1.OrderException
+import subpackage1.exceptions.OrderException
 
 class OrderValidator(name: String) {
   def validate = throw new OrderException("trebuchet explosion")

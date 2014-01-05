@@ -25,12 +25,6 @@ class RandomQuoteGenerator extends QuoteGenerator {
     } yield {
       "yield me"
     }
-    for {
-      s <- Future.successful("mystery")
-      t <- Future.failed(new RuntimeException)
-    } yield {
-      "failed future"
-    }
 
     SpotQuote(
       InstrumentLoader.randomInstrument,

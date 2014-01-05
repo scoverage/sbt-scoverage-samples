@@ -17,6 +17,7 @@ class RandomQuoteGenerator extends QuoteGenerator {
 
   def generate: SpotQuote = {
 
+    import scala.concurrent.ExecutionContext.Implicits.global
     // I want to test for loops, this seems like a good place to waste some cycles
     for {
       s <- Future.successful("mystery")

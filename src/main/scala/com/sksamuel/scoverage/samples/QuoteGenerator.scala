@@ -1,6 +1,7 @@
 package com.sksamuel.scoverage.samples
 
 import scala.util.Random
+import scala.concurrent.Future
 
 /** @author Stephen Samuel */
 trait QuoteGenerator {
@@ -14,10 +15,21 @@ class RandomQuoteGenerator extends QuoteGenerator {
     println("A fantastic constructor")
   }
 
-  def generate: SpotQuote = SpotQuote(
-    InstrumentLoader.randomInstrument,
-    if (System.currentTimeMillis() == 0) new Currency("Flibble") else new Currency("USD"),
-    BigDecimal.valueOf(Random.nextDouble * 100),
-    BigDecimal.valueOf(Random.nextDouble * 100)
-  )
+  def generate: SpotQuote = {
+
+    // I want to test for loops, thi seems like a good place to waste some cycles
+    for {
+      s <- Future.successful("mystery")
+      t <- Future.successful("machine")
+    } yield {
+      "yield me"
+    }
+
+    SpotQuote(
+      InstrumentLoader.randomInstrument,
+      if (System.currentTimeMillis() == 0) new Currency("Flibble") else new Currency("USD"),
+      BigDecimal.valueOf(Random.nextDouble * 100),
+      BigDecimal.valueOf(Random.nextDouble * 100)
+    )
+  }
 }

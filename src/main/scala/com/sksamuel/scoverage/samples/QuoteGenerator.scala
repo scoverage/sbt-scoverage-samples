@@ -17,12 +17,18 @@ class RandomQuoteGenerator extends QuoteGenerator {
 
   def generate: SpotQuote = {
 
-    // I want to test for loops, thi seems like a good place to waste some cycles
+    // I want to test for loops, this seems like a good place to waste some cycles
     for {
       s <- Future.successful("mystery")
       t <- Future.successful("machine")
     } yield {
       "yield me"
+    }
+    for {
+      s <- Future.successful("mystery")
+      t <- Future.failed(new RuntimeException)
+    } yield {
+      "failed future"
     }
 
     SpotQuote(

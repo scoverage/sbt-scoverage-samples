@@ -2,10 +2,10 @@ package com.sksamuel.scoverage.samples
 
 import org.scalatest.{OneInstancePerTest, FlatSpec}
 import akka.actor.{ActorSystem, Props}
-import akka.pattern.Patterns
-import akka.testkit.TestProbe
+import akka.pattern.{Patterns => TestImportAliasPatterns}
 import scala.concurrent.duration._
 import scala.concurrent.Await
+import akka.testkit.TestProbe
 
 /** @author Stephen Samuel */
 class CreditEngineTest extends FlatSpec with OneInstancePerTest {
@@ -27,12 +27,14 @@ class CreditEngineTest extends FlatSpec with OneInstancePerTest {
   val client = TestProbe()(system)
 
   "a credit engine" should "approve amounts under the minimum" in {
-    val future = Patterns.ask(creditEngine, CreditRequest(BigDecimal.valueOf(1999), req, client.ref), 2 seconds)
+    val future = TestImportAliasPatterns
+      .ask(creditEngine, CreditRequest(BigDecimal.valueOf(1999), req, client.ref), 2 seconds)
     Await.result(future, 2 seconds).asInstanceOf[CreditApprove]
   }
 
   it should "reject amounts over the min" in {
-    val future = Patterns.ask(creditEngine, CreditRequest(BigDecimal.valueOf(2001), req, client.ref), 2 seconds)
+    val future = TestImportAliasPatterns
+      .ask(creditEngine, CreditRequest(BigDecimal.valueOf(2001), req, client.ref), 2 seconds)
     Await.result(future, 2 seconds).asInstanceOf[CreditReject]
   }
 }

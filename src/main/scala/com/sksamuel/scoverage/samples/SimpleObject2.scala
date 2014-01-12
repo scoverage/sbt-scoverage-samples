@@ -1,6 +1,7 @@
 package com.sksamuel.scoverage.samples
 
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
+import ExecutionContext.Implicits.global
 
 /**
  *

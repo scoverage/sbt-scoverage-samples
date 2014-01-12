@@ -17,6 +17,8 @@ libraryDependencies ++= Seq(
 
 ScoverageSbtPlugin.instrumentSettings
 
+ScoverageSbtPlugin.ScoverageKeys.excludedPackages in ScoverageSbtPlugin.scoverage := "views*,AppLoader,Reverse*"
+
 CoverallsPlugin.singleProject
 
 publishArtifact in Test := false

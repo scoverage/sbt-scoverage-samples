@@ -5,7 +5,7 @@
 
     <groupId>com.sksamuel.scoverage</groupId>
     <artifactId>scoverage-samples</artifactId>
-    <version>1.0.0</version>
+    <version>0.95.7</version>
     <packaging>jar</packaging>
     <name>Test project for scoverage artifacts</name>
 

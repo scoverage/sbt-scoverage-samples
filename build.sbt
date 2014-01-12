@@ -1,8 +1,9 @@
+
 name := "scoverage-samples"
 
 organization := "com.sksamuel.scoverage"
 
-version := "0.95.2"
+version := "0.95.7"
 
 scalaVersion := "2.10.3"
 
@@ -16,8 +17,6 @@ libraryDependencies ++= Seq(
 )
 
 ScoverageSbtPlugin.instrumentSettings
-
-ScoverageSbtPlugin.ScoverageKeys.excludedPackages in ScoverageSbtPlugin.scoverage := "views*,AppLoader,Reverse*"
 
 CoverallsPlugin.singleProject
 

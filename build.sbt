@@ -13,7 +13,9 @@ libraryDependencies ++= Seq(
   "commons-io" % "commons-io" % "2.4",
   "com.typesafe.akka" %% "akka-actor" % "2.2.3",
   "com.typesafe.akka" %% "akka-actor-tests" % "2.2.3",
-  "org.scalatest" %% "scalatest" % "2.0" % "test"
+  "org.scalatest" %% "scalatest" % "2.0" % "test",
+  "org.scala-lang" % "scala-compiler" % "2.10.3" % "provided",
+  "org.scala-lang" % "scala-reflect" % "2.10.3"
 )
 
 ScoverageSbtPlugin.instrumentSettings

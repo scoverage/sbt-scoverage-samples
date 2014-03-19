@@ -11,7 +11,7 @@ It uses:
 
 * Akka 2.2
 * Scalatest
-* Scoverage 0.93
+* Scoverage 0.95.8
 
 
 ## License

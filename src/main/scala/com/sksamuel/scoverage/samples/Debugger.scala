@@ -1,5 +1,6 @@
 package com.sksamuel.scoverage.samples
 
+import scala.language.experimental.macros
 import scala.reflect.macros.Context
 
 /** @author Stephen Samuel */

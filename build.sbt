@@ -2,7 +2,7 @@ name := "scoverage-samples"
 
 organization := "org.scoverage"
 
-version := "0.98.0"
+version := "0.98.2"
 
 scalaVersion := "2.10.3"
 
@@ -19,7 +19,7 @@ libraryDependencies ++= Seq(
 
 ScoverageSbtPlugin.instrumentSettings
 
-CoverallsPlugin.singleProject
+//CoverallsPlugin.singleProject
 
 publishArtifact in Test := false
 

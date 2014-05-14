@@ -5,7 +5,7 @@
 
     <groupId>org.scoverage</groupId>
     <artifactId>scoverage-samples</artifactId>
-    <version>0.98.4</version>
+    <version>0.99.1</version>
     <packaging>jar</packaging>
     <name>Test project for scoverage artifacts</name>
 
@@ -32,7 +32,7 @@
         <junit.version>4.10</junit.version>
         <mockito.version>1.9.0</mockito.version>
 
-        <scoverage.version>0.99.0</scoverage.version>
+        <scoverage.version>0.99.1</scoverage.version>
 
         <scala.test.version>2.0</scala.test.version>
         <scala.version>2.10.3</scala.version>

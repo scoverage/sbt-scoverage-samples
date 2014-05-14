@@ -6,6 +6,8 @@ version := "0.98.4"
 
 scalaVersion := "2.10.3"
 
+crossScalaVersions := Seq("2.10.3", "2.11.0")
+
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
 libraryDependencies ++= Seq(

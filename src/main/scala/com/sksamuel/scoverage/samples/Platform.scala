@@ -13,4 +13,6 @@ object Platform extends App {
 
   val clients = for ( k <- 0 until 10 ) yield system.actorOf(Props(classOf[ClientActor], priceEngine, orderEngine))
 
+  val house = new Home[Thing]
+  val cage: Home[Human] = new Home[Creature]
 }

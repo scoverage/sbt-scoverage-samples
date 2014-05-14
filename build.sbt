@@ -11,13 +11,11 @@ crossScalaVersions := Seq("2.10.3", "2.11.0")
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
 libraryDependencies ++= Seq(
-  "commons-io"                % "commons-io"              % "2.4",
-  "com.typesafe.akka"         %% "akka-actor"             % "2.2.3",
-  "com.typesafe.akka"         %% "akka-actor-tests"       % "2.2.3",
-  "org.scala-lang"            % "scala-reflect"           % "2.10.3",
-  "com.typesafe.scala-logging" %% "scala-logging-slf4j"   % "2.1.2",
-  "org.scala-lang"            % "scala-compiler"          % "2.10.3"           % "provided",
-  "org.scalatest"             %% "scalatest"              % "2.1.2"            % "test"
+  "commons-io"                 % "commons-io"              % "2.4",
+  "com.typesafe.akka"          %% "akka-actor"             % "2.2.3",
+  "com.typesafe.akka"          %% "akka-actor-tests"       % "2.2.3",
+  "com.typesafe.scala-logging" %% "scala-logging-slf4j"    % "2.1.2",
+  "org.scalatest"              %% "scalatest"              % "2.1.2"            % "test"
 )
 
 

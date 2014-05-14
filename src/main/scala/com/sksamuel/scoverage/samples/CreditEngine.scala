@@ -1,7 +1,6 @@
 package com.sksamuel.scoverage.samples
 
 import akka.actor.Actor
-import com.typesafe.scalalogging.Logger
 import com.typesafe.scalalogging.slf4j.StrictLogging
 
 /** @author Stephen Samuel */
@@ -14,5 +13,8 @@ class CreditEngine extends Actor with StrictLogging {
       logger.debug("Received a credit request")
       if (req.amount < MaxCredit) sender ! CreditApprove(req.req, req.amount, req.client)
       else sender ! CreditReject(req.req, req.client)
+      if (System.currentTimeMillis < 0) {
+        logger.debug("Don't want to see this invoked") // should not see this covered
+      }
   }
 }

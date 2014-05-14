@@ -2,9 +2,6 @@ package com.sksamuel.scoverage.samples
 
 /** @author Stephen Samuel */
 
-import java.util.concurrent.TimeUnit
-import scala.concurrent.Await
-import scala.concurrent.duration._
 import org.scalatest.{OneInstancePerTest, FlatSpec}
 
 /**

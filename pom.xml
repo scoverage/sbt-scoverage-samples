@@ -32,7 +32,7 @@
         <junit.version>4.10</junit.version>
         <mockito.version>1.9.0</mockito.version>
 
-        <scoverage.version>0.98.4</scoverage.version>
+        <scoverage.version>0.99.0</scoverage.version>
 
         <scala.test.version>2.0</scala.test.version>
         <scala.version>2.10.3</scala.version>
@@ -163,6 +163,7 @@
             <plugin>
                 <groupId>org.scoverage</groupId>
                 <artifactId>maven-scoverage-plugin</artifactId>
+                <version>${scoverage.version}</version>
                 <executions>
                     <execution>
                         <id>install</id>

@@ -10,6 +10,7 @@ project/boot/
 project/plugins/project/
 *.iml
 .idea
+credentials.sbt
 
 # Scala-IDE specific
 .scala_dependencies

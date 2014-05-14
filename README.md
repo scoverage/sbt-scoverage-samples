@@ -10,8 +10,8 @@ A sample program for demonstrating scoverage's code coverage. This sample is an 
 It uses:
 
 * Akka 2.2
-* Scalatest
-* Scoverage 0.95.7
+* Scalatest for unit tests
+* Scoverage 0.98.4
 
 
 ## License

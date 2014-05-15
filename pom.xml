@@ -35,7 +35,7 @@
         <scoverage.version>0.99.1</scoverage.version>
 
         <scala.test.version>2.0</scala.test.version>
-        <scala.version>2.10.3</scala.version>
+        <scala.version>2.11.0</scala.version>
     </properties>
 
     <build>
@@ -67,7 +67,7 @@
                                 <compilerPlugins>
                                     <compilerPlugin>
                                         <groupId>org.scoverage</groupId>
-                                        <artifactId>scalac-scoverage-plugin_2.10</artifactId>
+                                        <artifactId>scalac-scoverage-plugin_2.11</artifactId>
                                         <version>${scoverage.version}</version>
                                     </compilerPlugin>
                                 </compilerPlugins>
@@ -179,7 +179,7 @@
     <dependencies>
         <dependency>
             <groupId>com.typesafe.scala-logging</groupId>
-            <artifactId>scala-logging-slf4j_2.10</artifactId>
+            <artifactId>scala-logging-slf4j_2.12</artifactId>
             <version>2.1.2</version>
         </dependency>
         <dependency>
@@ -201,22 +201,22 @@
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.10</artifactId>
-            <version>2.0</version>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>2.1.6</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.10</artifactId>
-            <version>2.2.3</version>
+            <artifactId>akka-actor_2.11</artifactId>
+            <version>2.3.2</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-testkit_2.10</artifactId>
-            <version>2.2.3</version>
+            <artifactId>akka-testkit_2.11</artifactId>
+            <version>2.3.2</version>
         </dependency>
         <dependency>
             <groupId>org.scoverage</groupId>
-            <artifactId>scalac-scoverage-plugin_2.10</artifactId>
+            <artifactId>scalac-scoverage-plugin_2.11</artifactId>
             <version>${scoverage.version}</version>
         </dependency>
     </dependencies>

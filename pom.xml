@@ -5,7 +5,7 @@
 
     <groupId>org.scoverage</groupId>
     <artifactId>scoverage-samples</artifactId>
-    <version>0.99.1</version>
+    <version>0.99.2</version>
     <packaging>jar</packaging>
     <name>Test project for scoverage artifacts</name>
 
@@ -32,7 +32,7 @@
         <junit.version>4.10</junit.version>
         <mockito.version>1.9.0</mockito.version>
 
-        <scoverage.version>0.99.1</scoverage.version>
+        <scoverage.version>0.99.2</scoverage.version>
 
         <scala.test.version>2.0</scala.test.version>
         <scala.version>2.11.0</scala.version>
@@ -47,11 +47,7 @@
                     <artifactId>scala-maven-plugin</artifactId>
                     <version>${maven.plugin.scala.version}</version>
                     <configuration>
-                        <args>
-                            <arg>-g:vars</arg>
-                            <arg>-Yrangepos</arg>
-                        </args>
-                        <jvmArgs>
+                    <jvmArgs>
                             <jvmArg>-Xms64m</jvmArg>
                             <jvmArg>-Xmx1024m</jvmArg>
                         </jvmArgs>
@@ -71,6 +67,11 @@
                                         <version>${scoverage.version}</version>
                                     </compilerPlugin>
                                 </compilerPlugins>
+                                <args>
+                                    <arg>-g:vars</arg>
+                                    <arg>-Yrangepos</arg>
+                                    <arg>-P:scoverage:dataDir:${project.build.directory}</arg>
+                                </args>
                             </configuration>
                         </execution>
                         <execution>
@@ -164,14 +165,6 @@
                 <groupId>org.scoverage</groupId>
                 <artifactId>maven-scoverage-plugin</artifactId>
                 <version>${scoverage.version}</version>
-                <executions>
-                    <execution>
-                        <id>test</id>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

@@ -2,7 +2,7 @@ name := "scoverage-samples"
 
 organization := "org.scoverage"
 
-version := "0.99.1"
+version := "0.99.2"
 
 scalaVersion := "2.11.0"
 
@@ -16,9 +16,12 @@ libraryDependencies ++= Seq(
   "org.scalatest"              %% "scalatest"              % "2.1.6"            % "test"
 )
 
-ScoverageSbtPlugin.instrumentSettings
 
-//CoverallsPlugin.singleProject
+instrumentSettings
+
+ScoverageKeys.minimumCoverage := 80
+
+ScoverageKeys.failOnMinimumCoverage := true
 
 publishArtifact in Test := false
 

@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka"          %% "akka-actor"             % "2.3.2",
   "com.typesafe.akka"          %% "akka-actor-tests"       % "2.3.2",
   "com.typesafe.scala-logging" %% "scala-logging-slf4j"    % "2.1.2",
-  "org.scalatest"              %% "scalatest"              % "2.1.2"            % "test"
+  "org.scalatest"              %% "scalatest"              % "2.1.6"            % "test"
 )
 
 ScoverageSbtPlugin.ScoverageKeys.compilerVersion := "2.10"

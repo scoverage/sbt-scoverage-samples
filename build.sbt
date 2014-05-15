@@ -6,8 +6,6 @@ version := "0.99.1"
 
 scalaVersion := "2.11.0"
 
-crossScalaVersions := Seq("2.10.3", "2.11.0")
-
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
 libraryDependencies ++= Seq(
@@ -17,8 +15,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging-slf4j"    % "2.1.2",
   "org.scalatest"              %% "scalatest"              % "2.1.6"            % "test"
 )
-
-ScoverageSbtPlugin.ScoverageKeys.compilerVersion := "2.10"
 
 ScoverageSbtPlugin.instrumentSettings
 

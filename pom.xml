@@ -166,7 +166,7 @@
                 <version>${scoverage.version}</version>
                 <executions>
                     <execution>
-                        <id>install</id>
+                        <id>test</id>
                         <goals>
                             <goal>report</goal>
                         </goals>

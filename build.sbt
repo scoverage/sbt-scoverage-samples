@@ -6,7 +6,13 @@ version := "0.99.2"
 
 scalaVersion := "2.11.0"
 
+crossScalaVersions := Seq("2.11.0", "2.10.3")
+
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
+
+scalacOptions ++= Seq("-unchecked", "-deprecation")
+
+scalacOptions in (Compile, doc) ++= Seq("-unchecked", "-deprecation", "-diagrams", "-implicits", "-skip-packages", "samples")
 
 libraryDependencies ++= Seq(
   "commons-io"                 % "commons-io"              % "2.4",
@@ -21,6 +27,11 @@ instrumentSettings
 ScoverageKeys.minimumCoverage := 70
 
 ScoverageKeys.failOnMinimumCoverage := false
+
+ScoverageKeys.highlighting := {
+  if (scalaBinaryVersion.value == "2.10") false
+  else false
+}
 
 publishArtifact in Test := false
 

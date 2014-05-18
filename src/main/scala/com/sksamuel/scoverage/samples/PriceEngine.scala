@@ -23,10 +23,12 @@ class PriceEngine(generator: QuoteGenerator) extends Actor {
     case StopService =>
       stop()
   }
+
   def stop() {
     if (cancellable != null)
       cancellable.cancel()
   }
+
   override def preStart(): Unit = {
     self ! StartService
   }

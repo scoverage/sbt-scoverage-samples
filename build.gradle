@@ -1,0 +1,43 @@
+// gradle defaults to 'build' but use the same working directory as maven and sbt
+buildDir = file('target')
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.maiflai:gradle-scalatest:0.5', 'org.scoverage:gradle-scoverage:0.5'
+    }
+}
+
+apply plugin: 'scala'
+apply plugin: 'scalatest'
+apply plugin: 'scoverage'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    scalaBinaryVersion = '2.11'
+    scalaVersion = '2.11.0'
+    akkaVersion = '2.3.2'
+}
+
+dependencies {
+    scoverage "org.scoverage:scalac-scoverage-plugin_${scalaBinaryVersion}:0.99.5"
+
+    compile "org.scala-lang:scala-library:${scalaVersion}", "org.scala-lang:scala-reflect:${scalaVersion}"
+
+    compile 'commons-io:commons-io:2.4'
+    compile "com.typesafe.akka:akka-actor_${scalaBinaryVersion}:${akkaVersion}"
+    compile "com.typesafe.scala-logging:scala-logging-slf4j_${scalaBinaryVersion}:2.1.2"
+
+    testCompile "org.scalatest:scalatest_${scalaBinaryVersion}:2.1.6"
+    testCompile "com.typesafe.akka:akka-actor-tests_${scalaBinaryVersion}:${akkaVersion}"
+    testRuntime 'org.pegdown:pegdown:1.1.0'
+}
+
+scoverage {
+    highlighting = false
+}

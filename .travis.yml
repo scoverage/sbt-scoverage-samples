@@ -1,5 +1,6 @@
 language: scala
 script: "sbt clean scoverage:test"
+script: "mvn clean test"
 scala:
    - 2.10.2
 jdk:

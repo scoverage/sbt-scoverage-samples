@@ -1,12 +1,14 @@
+import scoverage.ScoverageSbtPlugin
+
 name := "scoverage-samples"
 
 organization := "org.scoverage"
 
-version := "0.99.5"
+version := "0.99.8"
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.2"
 
-crossScalaVersions := Seq("2.11.0", "2.10.3")
+crossScalaVersions := Seq("2.11.2", "2.10.4")
 
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
@@ -19,10 +21,10 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka"          %% "akka-actor"             % "2.3.2",
   "com.typesafe.akka"          %% "akka-actor-tests"       % "2.3.2",
   "com.typesafe.scala-logging" %% "scala-logging-slf4j"    % "2.1.2",
-  "org.scalatest"              %% "scalatest"              % "2.1.6"            % "test"
+  "org.scalatest"              %% "scalatest"              % "2.2.1"            % "test"
 )
 
-instrumentSettings
+ScoverageSbtPlugin.instrumentSettings
 
 ScoverageKeys.minimumCoverage := 70
 

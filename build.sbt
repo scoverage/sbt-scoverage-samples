@@ -1,5 +1,3 @@
-import scoverage.ScoverageSbtPlugin
-
 name := "scoverage-samples"
 
 organization := "org.scoverage"
@@ -24,7 +22,7 @@ libraryDependencies ++= Seq(
   "org.scalatest"              %% "scalatest"              % "2.2.1"            % "test"
 )
 
-ScoverageSbtPlugin.instrumentSettings
+instrumentSettings
 
 ScoverageKeys.minimumCoverage := 70
 

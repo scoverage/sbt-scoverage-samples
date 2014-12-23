@@ -4,4 +4,4 @@ script: "gradle clean reportScoverage"
 scala:
    - 2.11.4
 jdk:
-   - oraclejdk8
+   - oraclejdk7

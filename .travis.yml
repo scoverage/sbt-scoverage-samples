@@ -1,7 +1,7 @@
 language: scala
 script: "sbt clean scoverage:test"
-script: "mvn clean test"
+script: "gradle clean reportScoverage"
 scala:
-   - 2.10.2
+   - 2.11.4
 jdk:
-   - oraclejdk7
+   - oraclejdk8

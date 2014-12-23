@@ -6,12 +6,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.github.maiflai:gradle-scalatest:0.5', 'org.scoverage:gradle-scoverage:0.5'
+        classpath 'com.github.maiflai:gradle-scalatest:0.6', 'org.scoverage:gradle-scoverage:1.0'
     }
 }
 
 apply plugin: 'scala'
-apply plugin: 'scalatest'
+apply plugin: 'com.github.maiflai.scalatest'
 apply plugin: 'scoverage'
 
 repositories {
@@ -20,12 +20,14 @@ repositories {
 
 ext {
     scalaBinaryVersion = '2.11'
-    scalaVersion = '2.11.0'
+    scalaVersion = '2.11.4'
+    scoverageVersion = '1.0.1'
     akkaVersion = '2.3.2'
 }
 
 dependencies {
-    scoverage "org.scoverage:scalac-scoverage-plugin_${scalaBinaryVersion}:0.99.5"
+    scoverage "org.scoverage:scalac-scoverage-plugin_${scalaBinaryVersion}:${scoverageVersion}",
+            "org.scoverage:scalac-scoverage-runtime_${scalaBinaryVersion}:${scoverageVersion}"
 
     compile "org.scala-lang:scala-library:${scalaVersion}", "org.scala-lang:scala-reflect:${scalaVersion}"
 
@@ -36,8 +38,4 @@ dependencies {
     testCompile "org.scalatest:scalatest_${scalaBinaryVersion}:2.1.6"
     testCompile "com.typesafe.akka:akka-actor-tests_${scalaBinaryVersion}:${akkaVersion}"
     testRuntime 'org.pegdown:pegdown:1.1.0'
-}
-
-scoverage {
-    highlighting = false
 }

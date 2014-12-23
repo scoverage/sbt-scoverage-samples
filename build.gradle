@@ -6,12 +6,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.github.maiflai:gradle-scalatest:0.6', 'org.scoverage:gradle-scoverage:1.0'
+        classpath 'com.github.maiflai:gradle-scalatest:0.5', 'org.scoverage:gradle-scoverage:1.0'
     }
 }
 
 apply plugin: 'scala'
-apply plugin: 'com.github.maiflai.scalatest'
+apply plugin: 'scalatest'
 apply plugin: 'scoverage'
 
 repositories {

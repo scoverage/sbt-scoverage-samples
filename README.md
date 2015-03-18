@@ -11,7 +11,7 @@ It uses:
 
 * Akka 2.2
 * Scalatest for unit tests
-* Scoverage 0.99.0
+* Scoverage 1.0.4
 
 
 ## License

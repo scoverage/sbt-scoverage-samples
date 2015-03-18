@@ -1,7 +1,7 @@
 scoverage-samples
 ==================
 
-[![Build Status](https://travis-ci.org/scoverage/scoverage-samples.png?branch=master)](https://travis-ci.org/scoverage/scoverage-samples)
+[![Build Status](https://travis-ci.org/scoverage/sbt-scoverage-samples.svg?branch=master)](https://travis-ci.org/scoverage/sbt-scoverage-samples)
 [![Coverage Status](https://coveralls.io/repos/scoverage/scoverage-samples/badge.png)](https://coveralls.io/r/scoverage/scoverage-samples)
 
 
@@ -11,7 +11,7 @@ It uses:
 
 * Akka 2.2
 * Scalatest for unit tests
-* Scoverage 0.99.0
+* Scoverage 1.0.4
 
 
 ## License

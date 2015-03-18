@@ -27,7 +27,7 @@ ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
 ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := false
 
 ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := {
-    if(scalaBinaryVersion.value == "2.10") false
+    if(scalaBinaryVersion.value == "2.11") true
     else false
 }
 

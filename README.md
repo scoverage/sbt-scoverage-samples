@@ -1,7 +1,7 @@
 scoverage-samples
 ==================
 
-[![Build Status](https://travis-ci.org/scoverage/scoverage-samples.png?branch=master)](https://travis-ci.org/scoverage/scoverage-samples)
+[![Build Status](https://travis-ci.org/scoverage/sbt-scoverage-samples.svg?branch=master)](https://travis-ci.org/scoverage/sbt-scoverage-samples)
 [![Coverage Status](https://coveralls.io/repos/scoverage/scoverage-samples/badge.png)](https://coveralls.io/r/scoverage/scoverage-samples)
 
 

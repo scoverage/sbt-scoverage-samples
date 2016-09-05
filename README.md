@@ -2,8 +2,6 @@ scoverage-samples
 ==================
 
 [![Build Status](https://travis-ci.org/scoverage/sbt-scoverage-samples.svg?branch=master)](https://travis-ci.org/scoverage/sbt-scoverage-samples)
-[![Coverage Status](https://coveralls.io/repos/scoverage/scoverage-samples/badge.png)](https://coveralls.io/r/scoverage/scoverage-samples)
-
 
 A sample program for demonstrating scoverage's code coverage. This sample is an akka based mock quote engine. Note: This project deliberately doesn't have 100% coverage for demonstration purposes.
 
@@ -11,7 +9,7 @@ It uses:
 
 * Akka 2.2
 * Scalatest for unit tests
-* Scoverage 1.0.4
+* Scoverage 1.3.5
 
 
 ## License

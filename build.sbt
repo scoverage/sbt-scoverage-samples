@@ -1,12 +1,12 @@
-name := "scoverage-samples"
+name := "sbt-scoverage-samples"
 
 organization := "org.scoverage"
 
-version := "1.0.4"
+version := "1.3.5"
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.11.2", "2.10.4")
+crossScalaVersions := Seq("2.11.8", "2.10.6")
 
 javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
@@ -22,13 +22,15 @@ libraryDependencies ++= Seq(
   "org.scalatest"              %% "scalatest"              % "2.2.1"            % "test"
 )
 
-ScoverageSbtPlugin.ScoverageKeys.coverageMinimum := 70
+coverageMinimum := 70
 
-ScoverageSbtPlugin.ScoverageKeys.coverageFailOnMinimum := false
+coverageFailOnMinimum := false
 
-ScoverageSbtPlugin.ScoverageKeys.coverageHighlighting := {
-    if(scalaBinaryVersion.value == "2.11") true
-    else false
+coverageHighlighting := {
+  if (scalaBinaryVersion.value == "2.11")
+    true
+  else
+    false
 }
 
 publishArtifact in Test := false

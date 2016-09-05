@@ -1,7 +1,10 @@
 language: scala
-script: "sbt clean coverage test"
-script: "gradle clean reportScoverage"
+
+script: "sbt clean coverage test coverageReport"
+
 scala:
-   - 2.11.4
+   - 2.10.6
+   - 2.11.8
+
 jdk:
    - oraclejdk7

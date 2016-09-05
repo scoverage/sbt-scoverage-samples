@@ -1,17 +1,23 @@
 package com.sksamuel.scoverage.samples
 
 import scala.language.experimental.macros
-import scala.reflect.macros.Context
+import scala.reflect.macros.whitebox
+import macrocompat.bundle
 
 /** @author Stephen Samuel */
 object Debugger {
 
-  def debug(params: Any*) = macro debugImpl
+  def debug(params: Any*): Unit = macro DebuggerMacros.debugImpl
+}
 
+@bundle
+class DebuggerMacros(val c: whitebox.Context) {
+  import c.universe._
   /**
    * Implementation of the debug macro
    */
-  def debugImpl(c: Context)(params: c.Expr[Any]*) = {
+
+  def debugImpl(params: c.Expr[Any]*): c.Expr[Unit] = {
     import c.universe._
 
     val trees = params map {

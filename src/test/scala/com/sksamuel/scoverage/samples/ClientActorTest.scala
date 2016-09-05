@@ -4,6 +4,7 @@ import org.scalatest.{OneInstancePerTest, FlatSpec}
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.TestProbe
 import scala.concurrent.duration._
+import scala.language.postfixOps
 
 /** @author Stephen Samuel */
 class ClientActorTest extends FlatSpec with OneInstancePerTest {

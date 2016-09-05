@@ -1,20 +1,18 @@
 package com.sksamuel.scoverage.samples
 
 import akka.actor.Actor
-import com.typesafe.scalalogging.slf4j.StrictLogging
 
 /** @author Stephen Samuel */
-class CreditEngine extends Actor with StrictLogging {
-
+class CreditEngine extends Actor {
   val MaxCredit = BigDecimal.valueOf(2000)
 
   def receive = {
     case req: CreditRequest =>
-      logger.debug("Received a credit request")
+      println("Received a credit request")
       if (req.amount < MaxCredit) sender ! CreditApprove(req.req, req.amount, req.client)
       else sender ! CreditReject(req.req, req.client)
       if (System.currentTimeMillis < 0) {
-        logger.debug("Don't want to see this invoked") // should not see this covered
+        println("Don't want to see this invoked") // should not see this covered
       }
   }
 }

@@ -5,6 +5,7 @@ import akka.actor.{ActorSystem, Props}
 import akka.pattern.{Patterns => TestImportAliasPatterns}
 import scala.concurrent.duration._
 import scala.concurrent.Await
+import scala.language.postfixOps
 import akka.testkit.TestProbe
 
 /** @author Stephen Samuel */

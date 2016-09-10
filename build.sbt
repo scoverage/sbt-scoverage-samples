@@ -34,3 +34,6 @@ coverageHighlighting := true
 publishArtifact in Test := false
 
 parallelExecution in Test := false
+
+addCommandAlias("coverageEnable", "set coverageEnabled := true")
+addCommandAlias("coverageDisable", "set coverageEnabled := false")

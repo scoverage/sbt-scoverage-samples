@@ -7,9 +7,9 @@ A sample program for demonstrating scoverage's code coverage. This sample is an 
 
 It uses:
 
-* Akka 2.3.16
+* Akka 2.4.16
 * Scalatest for unit tests
-* Scoverage 1.4.0
+* Scoverage 1.5.0
 
 To run:
 

@@ -7,14 +7,14 @@ A sample program for demonstrating scoverage's code coverage. This sample is an 
 
 It uses:
 
-* Akka 2.2
+* Akka 2.3.16
 * Scalatest for unit tests
-* Scoverage 1.3.5
+* Scoverage 1.4.0
 
 To run:
 
 ```
-sbt clean coverage test  ++2.10.6 ";set coverageEnabled := true;clean;test"
+sbt clean coverage test coverageReport"
 ```
 
 ## License

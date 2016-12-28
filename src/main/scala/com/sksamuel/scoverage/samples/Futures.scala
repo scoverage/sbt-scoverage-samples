@@ -1,6 +1,7 @@
 package com.sksamuel.scoverage.samples
 
 import scala.concurrent.{Promise, Future, ExecutionContext}
+import scala.language.implicitConversions
 
 /** @author Stephen Samuel */
 class Futures {

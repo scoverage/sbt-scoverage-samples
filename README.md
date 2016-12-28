@@ -11,6 +11,11 @@ It uses:
 * Scalatest for unit tests
 * Scoverage 1.3.5
 
+To run:
+
+```
+sbt clean coverage test  ++2.10.6 ";set coverageEnabled := true;clean;test"
+```
 
 ## License
 ```

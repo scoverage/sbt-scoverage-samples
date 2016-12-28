@@ -4,6 +4,7 @@ import akka.actor.{ActorRef, Actor}
 import scala.util.Random
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.language.postfixOps
 
 /** @author Stephen Samuel */
 class ClientActor(priceEngine: ActorRef, orderEngine: ActorRef) extends Actor {

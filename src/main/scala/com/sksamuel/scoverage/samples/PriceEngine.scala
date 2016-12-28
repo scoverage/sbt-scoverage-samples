@@ -3,6 +3,7 @@ package com.sksamuel.scoverage.samples
 import akka.actor.{Cancellable, Actor}
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.language.postfixOps
 
 /**
  * Produces quotes on a regular basis for all instruments and

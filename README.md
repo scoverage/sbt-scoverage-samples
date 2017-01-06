@@ -14,7 +14,7 @@ It uses:
 To run:
 
 ```
-sbt clean coverage test coverageReport"
+sbt clean coverage test coverageReport
 ```
 
 ## License

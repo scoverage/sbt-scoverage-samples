@@ -1,6 +1,6 @@
 node {
-stage("Unit Tests") 
-{
-sbt clean coverage test coverageReport 
-}
+	stage("Unit Tests") 
+	{
+		sh "sbt clean coverage test coverageReport"
+	}
 }

@@ -67,25 +67,15 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-    needs: 
-      - package
+    #needs: 
+     # - package
     
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-         sbt \
-         -Dsonar.host.url=https://sonarcloud.io \
-         -Dsonar.organization=himanshuupadhyay102 \
-         -Dsonar.projectKey=himanshuupadhyay102_sbt-scoverage-samples \
-         -Dsonar.sources=src/main/scala \
-         -Dsonar.tests=src/test/scala \
-         -Dsonar.scala.coverage.reportPaths=target/scala-2.12/scoverage-report/scoverage.xml \
-         
-      - name: Print nice message on completion of CI Pipeline
-        run : echo "CI Pipeline part finished successfully"

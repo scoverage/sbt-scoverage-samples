@@ -44,7 +44,7 @@ jobs:
       - name: echo
         run: pwd
       - name: Copy Artifacts To Codedeploy
-        run: cp /home/runner/work/sbt-scoverage-samples/target/universal/sbt-scoverage-samples-1.5.1.zip codedeploy/simple-scala-project-1.0.zip
+        run: cp /home/runner/work/sbt-scoverage-samples/sbt-scoverage-samples/target/universal/sbt-scoverage-samples-1.5.1.zip codedeploy/simple-scala-project-1.0.zip
         
       - name: Unzip the zip folder
         run: unzip codedeploy/simple-scala-project-1.0.zip -d codedeploy/

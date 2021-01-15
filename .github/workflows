@@ -1,0 +1,66 @@
+name: Scala CI
+env:
+  EB_PACKAGE_S3_BUCKET_NAME : "github-actions-10"
+  AWS_REGION_NAME           : "us-east-2"
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Run tests
+      run: sbt clean
+      run: sbt coverage
+      run: sbt test
+      run: sbt coverageReport
+  package:
+    runs-on: ubuntu-18.04
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate Dist
+        run: |
+          sbt dist
+      - name: Make Directory
+        run: |
+          mkdir -p codedeploy
+      - name: echo
+        run: pwd
+      - name: Copy Artifacts To Codedeploy
+        run: cp /home/runner/work/sbt-scoverage-samples/target/universal/sbt-scoverage-samples-1.5.1.zip codedeploy/simple-scala-project-1.0.zip
+        
+      - name: Unzip the zip folder
+        run: unzip codedeploy/simple-scala-project-1.0.zip -d codedeploy/
+      - name: Deleting zip folder
+        run: rm codedeploy/simple-scala-project-1.0.zip
+      - name: creating zip folder
+        run: zip -r codedeploy.zip *
+      - name: Configure my AWS Credentils
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+           aws-access-key-id    : ${{ secrets.MY_AWS_ACCESS_KEY }}
+           aws-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
+           aws-region           : ${{ env.AWS_REGION_NAME }}
+
+      - name: Copy our Deployment package to S3 bucket
+        run : aws s3 cp codedeploy.zip s3://github-actions10/p3-codedeploy.zip
+                
+         
+      - name: Print nice message on completion of CI Pipeline
+        run : echo "CI Pipeline part finished successfully"
+  
+  

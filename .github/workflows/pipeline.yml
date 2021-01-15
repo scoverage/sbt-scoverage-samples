@@ -21,12 +21,13 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Run tests
+    - name: Run clean
       run: sbt clean
-    - name: Run coverage
-      run: sbt coverage
+  
     - name: Run tests 
       run: sbt test
+    - name: Run coverage
+      run: sbt coverage
     - name: Run coverageReport 
       run: sbt coverageReport
   package:

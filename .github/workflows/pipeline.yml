@@ -24,13 +24,9 @@ jobs:
     #- name: Run clean
      # run: sbt clean
   
-    - name: Run tests 
+  - name: Run tests 
       run: sbt clean coverage test coverageReport
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     #- name: Run coverage
      
      #run: sbt coverage
@@ -69,18 +65,18 @@ jobs:
 
       - name: Copy our Deployment package to S3 bucket
         run : aws s3 cp codedeploy.zip s3://github-actions10/p3-codedeploy.zip
-  #sonarcloud:
-    #name: SonarCloud
-    #runs-on: ubuntu-latest
-    #needs: 
-     # - package
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    needs: 
+      - package
     
-    #steps:
-      #- uses: actions/checkout@v2
-        #with:
-          #fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      #- name: SonarCloud Scan
-        #uses: SonarSource/sonarcloud-github-action@master
-        #env:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          #SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

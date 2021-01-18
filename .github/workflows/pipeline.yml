@@ -24,7 +24,7 @@ jobs:
     #- name: Run clean
      # run: sbt clean
   
-  - name: Run tests 
+    - name: Run tests 
       run: sbt clean coverage test coverageReport
 
     #- name: Run coverage

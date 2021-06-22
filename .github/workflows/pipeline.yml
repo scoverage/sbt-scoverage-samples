@@ -1,7 +1,7 @@
 name: Scala CI
 env:
-  EB_PACKAGE_S3_BUCKET_NAME : "github-actions-10"
-  AWS_REGION_NAME           : "us-east-2"
+  EB_PACKAGE_S3_BUCKET_NAME : ${{ secrets.S3_BUCKET_NAME }}
+  AWS_REGION_NAME           : ${{ secrets.AWS_REGION_NAME }}
 on:
   push:
     branches: 

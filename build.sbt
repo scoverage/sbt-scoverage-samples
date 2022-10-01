@@ -23,7 +23,7 @@ libraryDependencies ++= Seq(
   "org.scalatest"              %% "scalatest"              % "3.0.0"            % "test",
   compilerPlugin("org.scalamacros" %% "paradise" % "2.1.0" cross CrossVersion.full)
 )
-
+enablePlugins(JavaAppPackaging)
 coverageMinimum := 70
 
 coverageFailOnMinimum := false

@@ -23,14 +23,17 @@ libraryDependencies ++= Seq(
   "org.scalatest"              %% "scalatest"              % "3.2.14"            % "test",
   compilerPlugin("org.scalamacros" %% "paradise" % "2.1.1" cross CrossVersion.full)
 )
-enablePlugins(JavaAppPackaging)
-
-coverageMinimum := 70
-
-coverageFailOnMinimum := false
+//enablePlugins(JavaAppPackaging)
 
 coverageHighlighting := true
+coverageFailOnMinimum := true
+coverageMinimumStmtTotal := 90
+coverageMinimumBranchTotal := 90
+coverageMinimumStmtPerPackage := 90
+coverageMinimumBranchPerPackage := 85
+coverageMinimumStmtPerFile := 85
+coverageMinimumBranchPerFile := 80
+
 
 publishArtifact in Test := false
-
 parallelExecution in Test := false

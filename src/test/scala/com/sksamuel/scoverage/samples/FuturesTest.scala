@@ -1,11 +1,12 @@
 package com.sksamuel.scoverage.samples
 
-import org.scalatest.{MustMatchers, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.must._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
 /** @author Stephen Samuel */
-class FuturesTest extends FunSuite with MustMatchers {
+class FuturesTest extends AnyFunSuite with Matchers {
 
   lazy val futures = new Futures
   val timeout = 10.seconds

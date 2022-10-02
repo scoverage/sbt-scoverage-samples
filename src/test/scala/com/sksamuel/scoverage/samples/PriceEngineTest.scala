@@ -1,11 +1,12 @@
 package com.sksamuel.scoverage.samples
 
-import org.scalatest.{OneInstancePerTest, FlatSpec}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.OneInstancePerTest
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.TestProbe
 
 /** @author Stephen Samuel */
-class PriceEngineTest extends FlatSpec with OneInstancePerTest {
+class PriceEngineTest extends AnyFlatSpec with OneInstancePerTest {
 
   val system = ActorSystem("scales-test")
   val priceEngine = system.actorOf(Props(classOf[PriceEngine], new RandomQuoteGenerator))

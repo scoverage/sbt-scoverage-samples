@@ -1,11 +1,12 @@
 package com.sksamuel.scoverage.samples
 
-import org.scalatest.{OneInstancePerTest, FlatSpec}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.OneInstancePerTest
 import akka.actor.{ActorSystem, Props}
 import akka.testkit.TestProbe
 
 /** @author Stephen Samuel */
-class OrderEngineTest extends FlatSpec with OneInstancePerTest {
+class OrderEngineTest extends AnyFlatSpec with OneInstancePerTest {
 
   val quote = SpotQuote(
     Instrument("CVX", "Chevron"),

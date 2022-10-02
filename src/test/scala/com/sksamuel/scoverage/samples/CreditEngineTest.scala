@@ -1,6 +1,7 @@
 package com.sksamuel.scoverage.samples
 
-import org.scalatest.{OneInstancePerTest, FlatSpec}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.OneInstancePerTest
 import akka.actor.{ActorSystem, Props}
 import akka.pattern.{Patterns => TestImportAliasPatterns}
 import scala.concurrent.duration._
@@ -9,7 +10,7 @@ import scala.language.postfixOps
 import akka.testkit.TestProbe
 
 /** @author Stephen Samuel */
-class CreditEngineTest extends FlatSpec with OneInstancePerTest {
+class CreditEngineTest extends AnyFlatSpec with OneInstancePerTest {
 
   val quote = SpotQuote(
     Instrument("CVX", "Chevron"),

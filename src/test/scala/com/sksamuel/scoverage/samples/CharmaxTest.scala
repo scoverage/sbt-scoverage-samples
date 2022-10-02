@@ -1,8 +1,9 @@
 package com.sksamuel.scoverage.samples
 
-import org.scalatest.{FreeSpec, Matchers}
+import org.scalatest.freespec.AnyFreeSpec
+import org.scalatest.matchers.should._
 
-class CharmaxTest extends FreeSpec with Matchers {
+class CharmaxTest extends AnyFreeSpec with Matchers {
 
   "a char max" - {
     "should not crash the XML writer" in {

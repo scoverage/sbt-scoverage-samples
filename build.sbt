@@ -21,9 +21,7 @@ libraryDependencies ++= Seq(
   "com.github.dmytromitin"     %% "macro-compat"           % "1.1.2",
   "org.scala-lang"             %  "scala-reflect"          % scalaVersion.value % "provided",
   "org.scalatest"              %% "scalatest"              % "3.2.14"            % "test"
-  //compilerPlugin("org.scalamacros" %% "paradise" % "2.1.1" cross CrossVersion.full)
 )
-//enablePlugins(JavaAppPackaging)
 
 coverageHighlighting := true
 coverageFailOnMinimum := false

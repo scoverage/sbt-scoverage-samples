@@ -26,13 +26,13 @@ libraryDependencies ++= Seq(
 //enablePlugins(JavaAppPackaging)
 
 coverageHighlighting := true
-coverageFailOnMinimum := true
-coverageMinimumStmtTotal := 90
-coverageMinimumBranchTotal := 90
-coverageMinimumStmtPerPackage := 90
-coverageMinimumBranchPerPackage := 85
-coverageMinimumStmtPerFile := 85
-coverageMinimumBranchPerFile := 80
+coverageFailOnMinimum := false
+coverageMinimumStmtTotal := 70
+coverageMinimumBranchTotal := 70
+coverageMinimumStmtPerPackage := 70
+coverageMinimumBranchPerPackage := 70
+coverageMinimumStmtPerFile := 70
+coverageMinimumBranchPerFile := 70
 
 
 publishArtifact in Test := false

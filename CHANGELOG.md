@@ -7,6 +7,7 @@
 * Refreshing the sample and make it work again with Scala 2.13 (using the latest sbt-scoverage release)
 * Remove Sam's name from the code and the package structure
 * Make the CI work (again)
+* Add coveralls
 
 # 1.5.0 - ???
 

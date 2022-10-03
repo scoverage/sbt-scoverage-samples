@@ -8,7 +8,8 @@ import akka.testkit.TestProbe
 class PriceEngineTest extends AnyFlatSpec with OneInstancePerTest {
 
   val system = ActorSystem("scales-test")
-  val priceEngine = system.actorOf(Props(classOf[PriceEngine], new RandomQuoteGenerator))
+  val priceEngine =
+    system.actorOf(Props(classOf[PriceEngine], new RandomQuoteGenerator))
   val probe = TestProbe()(system)
 
   "a price engine" should "broadcast on startup" in {

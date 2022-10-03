@@ -11,7 +11,9 @@ object SimpleObject {
 
   def method(input1: Boolean, input2: Boolean): Future[Option[Boolean]] = {
     for {
-      b <- if (input1) getSomething else getOtherSomething // this else should not be covered
+      b <-
+        if (input1) getSomething
+        else getOtherSomething // this else should not be covered
     } yield {
       if (input1 && input2) {
         Some(true)

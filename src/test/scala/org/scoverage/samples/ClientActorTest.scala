@@ -9,12 +9,15 @@ import scala.language.postfixOps
 
 class ClientActorTest extends AnyFlatSpec with OneInstancePerTest {
 
-  val req = MarketOrderRequest(Instrument("CVX", "Chevron"), BigDecimal.valueOf(400))
+  val req =
+    MarketOrderRequest(Instrument("CVX", "Chevron"), BigDecimal.valueOf(400))
 
   val system = ActorSystem("scales-test")
   val priceEngine = TestProbe()(system)
   val orderEngine = TestProbe()(system)
-  val client = system.actorOf(Props(classOf[ClientActor], priceEngine.ref, orderEngine.ref))
+  val client = system.actorOf(
+    Props(classOf[ClientActor], priceEngine.ref, orderEngine.ref)
+  )
 
   "a client actor" should "ask for a quote" in {
     priceEngine.expectMsgType[RequestForQuote]

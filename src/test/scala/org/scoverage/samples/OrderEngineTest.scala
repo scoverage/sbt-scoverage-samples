@@ -19,7 +19,8 @@ class OrderEngineTest extends AnyFlatSpec with OneInstancePerTest {
   val system = ActorSystem("scales-test")
   val creditEngine = TestProbe()(system)
   val client = TestProbe()(system)
-  val orderEngine = system.actorOf(Props(classOf[OrderEngine], creditEngine.ref))
+  val orderEngine =
+    system.actorOf(Props(classOf[OrderEngine], creditEngine.ref))
 
   "an order engine" should "create an order if credit approved" in {
     orderEngine ! CreditApprove(req, BigDecimal.valueOf(100), client.ref)
@@ -36,6 +37,5 @@ class OrderEngineTest extends AnyFlatSpec with OneInstancePerTest {
     orderEngine ! req
     creditEngine.expectMsgType[CreditRequest]
   }
-
 
 }

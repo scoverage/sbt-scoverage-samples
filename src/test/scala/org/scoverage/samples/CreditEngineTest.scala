@@ -20,7 +20,8 @@ class CreditEngineTest extends AnyFlatSpec with OneInstancePerTest {
 
   assert(getClass.getResource("/scroobius.txt") != null)
 
-  val req = MarketOrderRequest(Instrument("CVX", "Chevron"), BigDecimal.valueOf(400))
+  val req =
+    MarketOrderRequest(Instrument("CVX", "Chevron"), BigDecimal.valueOf(400))
 
   val system = ActorSystem("scales-test")
   val creditEngine = system.actorOf(Props[CreditEngine])
@@ -28,13 +29,21 @@ class CreditEngineTest extends AnyFlatSpec with OneInstancePerTest {
 
   "a credit engine" should "approve amounts under the minimum" in {
     val future = TestImportAliasPatterns
-      .ask(creditEngine, CreditRequest(BigDecimal.valueOf(1999), req, client.ref), 2 seconds)
+      .ask(
+        creditEngine,
+        CreditRequest(BigDecimal.valueOf(1999), req, client.ref),
+        2 seconds
+      )
     Await.result(future, 2 seconds).asInstanceOf[CreditApprove]
   }
 
   it should "reject amounts over the min" in {
     val future = TestImportAliasPatterns
-      .ask(creditEngine, CreditRequest(BigDecimal.valueOf(2001), req, client.ref), 2 seconds)
+      .ask(
+        creditEngine,
+        CreditRequest(BigDecimal.valueOf(2001), req, client.ref),
+        2 seconds
+      )
     Await.result(future, 2 seconds).asInstanceOf[CreditReject]
   }
 }

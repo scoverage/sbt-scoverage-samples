@@ -7,8 +7,8 @@ trait QuoteCache {
 
   val map = scala.collection.mutable.Map.empty[Instrument, SpotQuote]
 
-  val behaviour: PartialFunction[Any, Unit] = {
-    case quote: SpotQuote => map.put(quote.instrument, quote)
+  val behaviour: PartialFunction[Any, Unit] = { case quote: SpotQuote =>
+    map.put(quote.instrument, quote)
   }
 
   override def preStart(): Unit = {

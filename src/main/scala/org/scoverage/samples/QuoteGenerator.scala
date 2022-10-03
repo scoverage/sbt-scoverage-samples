@@ -27,7 +27,8 @@ class RandomQuoteGenerator extends QuoteGenerator {
 
     SpotQuote(
       InstrumentLoader.randomInstrument,
-      if (System.currentTimeMillis() == 0) new Currency("Flibble") else new Currency("USD"),
+      if (System.currentTimeMillis() == 0) new Currency("Flibble")
+      else new Currency("USD"),
       BigDecimal.valueOf(Random.nextDouble * 100),
       BigDecimal.valueOf(Random.nextDouble * 100)
     )

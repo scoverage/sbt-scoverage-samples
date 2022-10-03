@@ -9,7 +9,10 @@ import org.scalatest.OneInstancePerTest
 class SimpleClassTest extends AnyFlatSpec with OneInstancePerTest {
 
   "a SimpleClassTest" should "test 1" in {
-    val result = Await.result(SimpleObject.method(true, true), Duration(1, TimeUnit.SECONDS))
+    val result = Await.result(
+      SimpleObject.method(true, true),
+      Duration(1, TimeUnit.SECONDS)
+    )
     assert(Some(true) === result)
   }
 }

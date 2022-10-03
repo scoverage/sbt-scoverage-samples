@@ -7,22 +7,21 @@ import ExecutionContext.Implicits.global
   */
 object SimpleObject2 {
 
-  def method1(input: Int) {
+  def method1(input: Int): Unit = {
     for {
       auth <- method2(input)
     } yield auth match {
       case LoginSignupResult(Some(result), _, _, _) =>
-        println("1")
         result
       case LoginSignupResult(_, Some(url), _, Some(session)) =>
-        println("2")
         url
       case LoginSignupResult(_, Some(url), _, _) =>
-        println("3")
         url
       case LoginSignupResult(_, _, Some(authUser), _) =>
-        println("4")
         authUser
+      case _ =>
+        throw new RuntimeException("Unknown case")
+        ""
     }
   }
 

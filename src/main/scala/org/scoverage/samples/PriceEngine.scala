@@ -12,16 +12,20 @@ class PriceEngine(generator: QuoteGenerator) extends Actor {
   def receive = {
     case StartService =>
       stop()
-      cancellable =
-        context.system.scheduler.schedule(100 milliseconds, 100 milliseconds) {
+
+      val quoter: Runnable = () => {
           val quote = generator.generate
           context.system.eventStream.publish(quote)
         }
+
+      cancellable =
+        context.system.scheduler.scheduleWithFixedDelay(100 milliseconds, 100 milliseconds){quoter}
+
     case StopService =>
       stop()
   }
 
-  def stop() {
+  def stop(): Unit = {
     if (cancellable != null)
       cancellable.cancel()
   }

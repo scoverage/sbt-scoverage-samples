@@ -10,7 +10,7 @@ class OrderEngine(creditEngine: ActorRef) extends Actor with QuoteCache {
       // send a credit request only if we have a price for the instrument
       map.get(req.instrument) foreach (quote => {
         val amount = quote.ask * req.units
-        creditEngine ! CreditRequest(amount, req, sender)
+        creditEngine ! CreditRequest(amount, req, sender())
       })
 
     case approve: CreditApprove =>

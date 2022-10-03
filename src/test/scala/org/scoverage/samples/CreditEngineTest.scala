@@ -24,7 +24,7 @@ class CreditEngineTest extends AnyFlatSpec with OneInstancePerTest {
     MarketOrderRequest(Instrument("CVX", "Chevron"), BigDecimal.valueOf(400))
 
   val system = ActorSystem("scales-test")
-  val creditEngine = system.actorOf(Props[CreditEngine])
+  val creditEngine = system.actorOf(Props(classOf[CreditEngine]))
   val client = TestProbe()(system)
 
   "a credit engine" should "approve amounts under the minimum" in {

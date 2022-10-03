@@ -10,9 +10,7 @@ crossScalaVersions := Seq("2.13.9")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
-scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
-
-scalacOptions in (Compile, doc) ++= Seq("-unchecked", "-deprecation", "-diagrams", "-implicits", "-skip-packages", "samples")
+scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Werror")
 
 libraryDependencies ++= Seq(
   "commons-io"                 %  "commons-io"             % "2.11.0",

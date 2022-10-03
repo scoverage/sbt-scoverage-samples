@@ -42,6 +42,6 @@ class ClientActorTest extends AnyFlatSpec with OneInstancePerTest {
       BigDecimal.valueOf(50.01)
     )
     client ! quote
-    orderEngine.expectNoMsg(2 seconds)
+    orderEngine.expectNoMessage(2 seconds)
   }
 }

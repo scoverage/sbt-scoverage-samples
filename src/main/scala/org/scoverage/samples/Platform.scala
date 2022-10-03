@@ -8,7 +8,7 @@ object Platform extends App {
 
   val priceEngine =
     system.actorOf(Props(classOf[PriceEngine], new RandomQuoteGenerator))
-  val creditEngine = system.actorOf(Props[CreditEngine])
+  val creditEngine = system.actorOf(Props(classOf[CreditEngine]))
   val orderEngine = system.actorOf(Props(classOf[OrderEngine], creditEngine))
 
   val clients =

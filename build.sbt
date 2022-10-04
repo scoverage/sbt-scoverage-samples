@@ -21,6 +21,9 @@ libraryDependencies ++= Seq(
   "org.scalatest"              %% "scalatest"              % "3.2.14"            % "test"
 )
 
+import org.scoverage.coveralls.Imports.CoverallsKeys._
+coverallsTokenFile := Some("./.coverallsToken")
+
 coverageHighlighting := true
 coverageFailOnMinimum := false
 coverageMinimumStmtTotal := 70

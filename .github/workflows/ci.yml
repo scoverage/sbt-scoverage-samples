@@ -1,0 +1,23 @@
+name: Scoverage Sample Build
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Scala
+      uses: olafurpg/setup-scala@v10
+      with:
+        java-version: "adopt@1.8"
+
+    - name: Run Tests
+      run: sbt clean coverage test coverageReport

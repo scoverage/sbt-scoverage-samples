@@ -7,7 +7,7 @@ A sample program for demonstrating scoverage's code coverage. This sample is an 
 To run the sample you need to ...
 
 ```bash
-sbt clean compile test:compile test coverageReport`
+sbt clean compile test:compile coverage test coverageReport`
 ```
 
 Afterwards you can find the report in ...
@@ -19,10 +19,11 @@ Afterwards you can find the report in ...
 You can also upload the report to [coveralls][] by running ...
 
 ```
-sbt clean compile test:compile test coverageReport coveralls`
+sbt clean compile test:compile coverage test coverageReport coveralls`
 ```
 
 Afterwards you can find the report on [coveralls][coveralls-status] ...
+
 [coveralls]: https://coveralls.io
 [coveralls-badge]: https://coveralls.io/repos/github/scoverage/sbt-scoverage-samples/badge.svg
 [coveralls-status]: https://coveralls.io/github/scoverage/sbt-scoverage-samples

@@ -11,7 +11,7 @@ class FuturesTest extends AnyFunSuite with Matchers {
   val timeout = 10.seconds
 
   import scala.concurrent.ExecutionContext.Implicits.global
-  implicit val name = "sammy"
+  implicit val name: String = "sammy"
 
   test("futures happy path") {
     val person = new Person("sammy")

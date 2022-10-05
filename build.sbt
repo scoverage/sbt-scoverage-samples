@@ -4,9 +4,9 @@ organization := "org.scoverage"
 
 version := "1.6.0"
 
-scalaVersion := "2.13.9"
+scalaVersion := "3.2.0"
 
-crossScalaVersions := Seq("2.13.9")
+crossScalaVersions := Seq("3.2.0")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 

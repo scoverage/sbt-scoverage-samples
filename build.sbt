@@ -2,23 +2,21 @@ name := "sbt-scoverage-samples"
 
 organization := "org.scoverage"
 
-version := "1.6.0"
+version := "1.6.1"
 
 scalaVersion := "3.2.0"
 
-crossScalaVersions := Seq("3.2.0")
+crossScalaVersions := Seq("2.13.9", "3.2.0")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Werror")
 
 libraryDependencies ++= Seq(
-  "commons-io"                 %  "commons-io"             % "2.11.0",
-  "com.typesafe.akka"          %% "akka-actor"             % "2.6.20",
-  "com.typesafe.akka"          %% "akka-testkit"           % "2.6.20"           % "test",
-  "com.github.dmytromitin"     %% "macro-compat"           % "1.1.2",
-  "org.scala-lang"             %  "scala-reflect"          % scalaVersion.value % "provided",
-  "org.scalatest"              %% "scalatest"              % "3.2.14"            % "test"
+  "commons-io"             %  "commons-io"    % "2.11.0",
+  "com.typesafe.akka"      %% "akka-actor"    % "2.6.20",
+  "com.typesafe.akka"      %% "akka-testkit"  % "2.6.20" % "test",
+  "org.scalatest"          %% "scalatest"     % "3.2.14" % "test"
 )
 
 import org.scoverage.coveralls.Imports.CoverallsKeys._

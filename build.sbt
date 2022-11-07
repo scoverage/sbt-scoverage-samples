@@ -16,7 +16,8 @@ libraryDependencies ++= Seq(
   "commons-io"             %  "commons-io"    % "2.11.0",
   "com.typesafe.akka"      %% "akka-actor"    % "2.6.20",
   "com.typesafe.akka"      %% "akka-testkit"  % "2.6.20" % "test",
-  "org.scalatest"          %% "scalatest"     % "3.2.14" % "test"
+  "org.scalatest"          %% "scalatest"     % "3.2.14" % "test",
+  "com.lihaoyi"            %% "upickle"       % "2.0.0"
 )
 
 import org.scoverage.coveralls.Imports.CoverallsKeys._

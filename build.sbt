@@ -31,6 +31,5 @@ coverageMinimumBranchPerPackage := 70
 coverageMinimumStmtPerFile := 70
 coverageMinimumBranchPerFile := 70
 
-
 publishArtifact in Test := false
 parallelExecution in Test := false

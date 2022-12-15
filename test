@@ -1,0 +1,14 @@
+# Do not remove this file. It is used by the sbt-test in sbt-coveralls.
+> +clean
+> +coverage
+> +test
+$ exists target/scala-2.13.9/scoverage-data/scoverage.coverage
+$ exists target/scala-3.2.0/scoverage-data/scoverage.coverage
+> +coverageReport
+$ exists target/scala-2.13.9/scoverage-report/scoverage.xml
+$ exists target/scala-3.2.0/scoverage-report/scoverage.xml
+> +coveralls
+$ exists target/scala-2.13.9/coverage-report/cobertura.xml
+$ exists target/scala-2.13.9/coveralls.json
+$ exists target/scala-3.2.0/coverage-report/cobertura.xml
+$ exists target/scala-3.2.0/coveralls.json

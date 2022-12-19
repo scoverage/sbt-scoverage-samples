@@ -20,7 +20,7 @@ class PriceEngineTest extends AnyFlatSpec with OneInstancePerTest {
   it should "stop broadcasting on StopService msg" in {
     system.eventStream.subscribe(probe.ref, classOf[SpotQuote])
     priceEngine ! StopService
-    Thread.sleep(500) // enough time to shutdown
+    Thread.sleep(1000) // enough time to shutdown
     probe.expectNoMessage()
   }
 

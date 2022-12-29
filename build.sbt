@@ -2,11 +2,11 @@ name := "sbt-scoverage-samples"
 
 organization := "org.scoverage"
 
-version := "1.6.1"
+version := "1.6.2"
 
-scalaVersion := "3.2.0"
+scalaVersion := "3.2.2-RC2"
 
-crossScalaVersions := Seq("2.13.9", "3.2.0")
+crossScalaVersions := Seq("2.13.9", "3.2.2-RC2")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 

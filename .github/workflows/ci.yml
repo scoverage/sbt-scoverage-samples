@@ -1,4 +1,5 @@
 name: Scoverage Sample Build
+
 on:
   pull_request:
   push:
@@ -6,12 +7,11 @@ on:
     - main
 
 jobs:
-  os_matrix:
+  build:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
 
-  build:
     runs-on: ${{ matrix.os }}
 
     steps:

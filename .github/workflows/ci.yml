@@ -6,8 +6,13 @@ on:
     - main
 
 jobs:
+  os_matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Git Checkout

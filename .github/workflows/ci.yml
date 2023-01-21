@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -20,4 +19,4 @@ jobs:
         java-version: "openjdk@1.17.0"
 
     - name: Run Tests
-      run: sbt +clean +coverage +test +coverageReport
+      run: sbt +clean +coverage +test +coverageReport +coveralls

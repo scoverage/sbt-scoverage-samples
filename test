@@ -3,12 +3,12 @@
 > +coverage
 > +test
 $ exists target/scala-2.13/scoverage-data/scoverage.coverage
-$ exists target/scala-3.2.2/scoverage-data/scoverage.coverage
+$ exists target/scala-3.3.1/scoverage-data/scoverage.coverage
 > +coverageReport
 $ exists target/scala-2.13/scoverage-report/scoverage.xml
-$ exists target/scala-3.2.2/scoverage-report/scoverage.xml
+$ exists target/scala-3.3.1/scoverage-report/scoverage.xml
 > +coveralls
 $ exists target/scala-2.13/coverage-report/cobertura.xml
 $ exists target/scala-2.13/coveralls.json
-$ exists target/scala-3.2.2/coverage-report/cobertura.xml
-$ exists target/scala-3.2.2/coveralls.json
+$ exists target/scala-3.3.1/coverage-report/cobertura.xml
+$ exists target/scala-3.3.1/coveralls.json

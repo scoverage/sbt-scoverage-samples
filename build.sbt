@@ -4,7 +4,7 @@ organization := "org.scoverage"
 
 version := "1.6.4"
 
-scalaVersion := "3.3.1"
+scalaVersion := "3.3.2-RC1"
 
 crossScalaVersions := Seq("2.13.12") :+ scalaVersion.value
 

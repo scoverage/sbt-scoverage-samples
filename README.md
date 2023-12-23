@@ -1,4 +1,4 @@
-[![Coverage Status][coveralls-badge]][coveralls-status]
+[![coveralls-badge][]][coveralls-status]
 
 # scoverage samples
 
@@ -20,7 +20,7 @@ Afterwards you can find the report in ...
 
 ```
 ./target/scala-2.13/scoverage-report/index.html
-./target/scala-3.3.1/scoverage-report/index.html
+./target/scala-3.3.2-RC1/scoverage-report/index.html
 ```
 
 You can also upload the report to [coveralls][] by running ...

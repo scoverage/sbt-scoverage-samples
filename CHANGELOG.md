@@ -1,3 +1,7 @@
+# 1.6.5 - 2024-01-01
+
+* Upgrade to 3.3.2 (to take advantage of the coverage fix)
+
 # 1.6.4 - 2023-10-01
 
 * Upgrade to latest versions
